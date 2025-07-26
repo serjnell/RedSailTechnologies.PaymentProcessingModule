@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSailTechnologies.Payment
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSailTechnologies.PaymentProcessingModule.Common", "RedSailTechnologies.PaymentProcessingModule.Common\RedSailTechnologies.PaymentProcessingModule.Common.csproj", "{919C178E-568D-4307-A4C6-B8FD0A4DAD3C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSailTechnologies.PaymentProcessingModule.Tests", "RedSailTechnologies.PaymentProcessingModule.Tests\RedSailTechnologies.PaymentProcessingModule.Tests.csproj", "{D4E9C0DA-4F7F-4D0A-8817-9A212F008AC3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{919C178E-568D-4307-A4C6-B8FD0A4DAD3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{919C178E-568D-4307-A4C6-B8FD0A4DAD3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{919C178E-568D-4307-A4C6-B8FD0A4DAD3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4E9C0DA-4F7F-4D0A-8817-9A212F008AC3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4E9C0DA-4F7F-4D0A-8817-9A212F008AC3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4E9C0DA-4F7F-4D0A-8817-9A212F008AC3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4E9C0DA-4F7F-4D0A-8817-9A212F008AC3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using RedSailTechnologies.PaymentProcessingModule.Api.Controllers.DailyTotals;
+using RedSailTechnologies.PaymentProcessingModule.Common.Interfaces.Handlers;
 
 namespace RedSailTechnologies.PaymentProcessingModule.Api
 {
@@ -16,6 +18,8 @@ namespace RedSailTechnologies.PaymentProcessingModule.Api
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            builder.Services.AddTransient<IDailyTotalsHandler, DailyTotalsHandler>();
 
             var app = builder.Build();
 
