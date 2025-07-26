@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RedSailTechnologies.PaymentProcessingModule.Repositories")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+80e51c8b6c81bae2bb71f1980c04ea7323909c7f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4b0a245043b02b6f57fef3a47b49f3cf530baf04")]
 [assembly: System.Reflection.AssemblyProductAttribute("RedSailTechnologies.PaymentProcessingModule.Repositories")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RedSailTechnologies.PaymentProcessingModule.Repositories")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
