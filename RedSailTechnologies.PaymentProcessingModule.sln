@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSailTechnologies.PaymentProcessingModule.Api", "RedSailTechnologies.PaymentProcessingModule\RedSailTechnologies.PaymentProcessingModule.Api.csproj", "{C8D81D99-D5B8-454C-84B3-E77A3A66C0FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSailTechnologies.PaymentProcessingModule.Services", "RedSailTechnologies.PaymentProcessingModule.Services\RedSailTechnologies.PaymentProcessingModule.Services.csproj", "{E01F27AD-975F-492A-9BED-499870CC07AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSailTechnologies.PaymentProcessingModule.Repositories", "RedSailTechnologies.PaymentProcessingModule.Repositories\RedSailTechnologies.PaymentProcessingModule.Repositories.csproj", "{20922AC4-DCAC-4CF5-9217-62DF8FADB75A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSailTechnologies.PaymentProcessingModule.Common", "RedSailTechnologies.PaymentProcessingModule.Common\RedSailTechnologies.PaymentProcessingModule.Common.csproj", "{919C178E-568D-4307-A4C6-B8FD0A4DAD3C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8D81D99-D5B8-454C-84B3-E77A3A66C0FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8D81D99-D5B8-454C-84B3-E77A3A66C0FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8D81D99-D5B8-454C-84B3-E77A3A66C0FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8D81D99-D5B8-454C-84B3-E77A3A66C0FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E01F27AD-975F-492A-9BED-499870CC07AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E01F27AD-975F-492A-9BED-499870CC07AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E01F27AD-975F-492A-9BED-499870CC07AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E01F27AD-975F-492A-9BED-499870CC07AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20922AC4-DCAC-4CF5-9217-62DF8FADB75A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20922AC4-DCAC-4CF5-9217-62DF8FADB75A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20922AC4-DCAC-4CF5-9217-62DF8FADB75A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20922AC4-DCAC-4CF5-9217-62DF8FADB75A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{919C178E-568D-4307-A4C6-B8FD0A4DAD3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{919C178E-568D-4307-A4C6-B8FD0A4DAD3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{919C178E-568D-4307-A4C6-B8FD0A4DAD3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{919C178E-568D-4307-A4C6-B8FD0A4DAD3C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B85A763B-BF2F-498A-BE7A-12C119DD3D48}
+	EndGlobalSection
+EndGlobal
