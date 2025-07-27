@@ -1,0 +1,42 @@
+[
+		{
+			"Amount"    : "1",
+			"Currency"  : "USD",
+			"Timestamp" : "2025-07-27T12:12:12"
+		},
+		{
+			"Amount"    : "2",
+			"Currency"  : "USD",
+			"Timestamp" : "2025-07-27T11:11:11"
+		},
+		{
+			"Amount"    : "3",
+			"Currency"  : "USD",
+			"Timestamp" : "2025-07-28T10:10:10"
+		},
+		{
+			"Amount"    : "4",
+			"Currency"  : "USD",
+			"Timestamp" : "2025-07-28T09:00:00"
+		},
+		{
+			"Amount"    : "5",
+			"Currency"  : "EUR",
+			"Timestamp" : "2025-07-28T12:12:12"
+		},
+		{
+			"Amount"    : "6",
+			"Currency"  : "EUR",
+			"Timestamp" : "2025-07-28T11:11:11"
+		},
+		{
+			"Amount"    : "7",
+			"Currency"  : "EUR",
+			"Timestamp" : "2025-07-29T10:10:10"
+		},
+		{
+			"Amount"    : "8",
+			"Currency"  : "EUR",
+			"Timestamp" : "2025-07-29T09:00:00"
+		}
+]

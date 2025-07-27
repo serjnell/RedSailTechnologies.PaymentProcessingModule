@@ -1,11 +1,11 @@
 ﻿using RedSailTechnologies.PaymentProcessingModule.Common.Models;
 
-namespace RedSailTechnologies.PaymentProcessingModule.Common.Interfaces.Handlers
+namespace RedSailTechnologies.PaymentProcessingModule.Services.Interfaces
 {
     /// <summary>
-    /// The daily totals handler.
+    /// The daily totals service.
     /// </summary>
-    public interface IDailyTotalsHandler
+    public interface IDailyTotalsService
     {
         /// <summary>
         /// Calculates daily totals.

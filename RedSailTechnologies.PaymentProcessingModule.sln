@@ -7,8 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSailTechnologies.Payment
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSailTechnologies.PaymentProcessingModule.Services", "RedSailTechnologies.PaymentProcessingModule.Services\RedSailTechnologies.PaymentProcessingModule.Services.csproj", "{E01F27AD-975F-492A-9BED-499870CC07AC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSailTechnologies.PaymentProcessingModule.Repositories", "RedSailTechnologies.PaymentProcessingModule.Repositories\RedSailTechnologies.PaymentProcessingModule.Repositories.csproj", "{20922AC4-DCAC-4CF5-9217-62DF8FADB75A}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSailTechnologies.PaymentProcessingModule.Common", "RedSailTechnologies.PaymentProcessingModule.Common\RedSailTechnologies.PaymentProcessingModule.Common.csproj", "{919C178E-568D-4307-A4C6-B8FD0A4DAD3C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedSailTechnologies.PaymentProcessingModule.Tests", "RedSailTechnologies.PaymentProcessingModule.Tests\RedSailTechnologies.PaymentProcessingModule.Tests.csproj", "{D4E9C0DA-4F7F-4D0A-8817-9A212F008AC3}"
@@ -27,10 +25,6 @@ Global
 		{E01F27AD-975F-492A-9BED-499870CC07AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E01F27AD-975F-492A-9BED-499870CC07AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E01F27AD-975F-492A-9BED-499870CC07AC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{20922AC4-DCAC-4CF5-9217-62DF8FADB75A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20922AC4-DCAC-4CF5-9217-62DF8FADB75A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20922AC4-DCAC-4CF5-9217-62DF8FADB75A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20922AC4-DCAC-4CF5-9217-62DF8FADB75A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{919C178E-568D-4307-A4C6-B8FD0A4DAD3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{919C178E-568D-4307-A4C6-B8FD0A4DAD3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{919C178E-568D-4307-A4C6-B8FD0A4DAD3C}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RedSailTechnologies.PaymentProcessingModule.Common\RedSailTechnologies.PaymentProcessingModule.Common.csproj" />
+    <ProjectReference Include="..\RedSailTechnologies.PaymentProcessingModule.Services\RedSailTechnologies.PaymentProcessingModule.Services.csproj" />
   </ItemGroup>
 
 </Project>

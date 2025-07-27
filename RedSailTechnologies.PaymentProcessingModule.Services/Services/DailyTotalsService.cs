@@ -1,12 +1,9 @@
-﻿using RedSailTechnologies.PaymentProcessingModule.Common.Interfaces.Handlers;
-using RedSailTechnologies.PaymentProcessingModule.Common.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using RedSailTechnologies.PaymentProcessingModule.Common.Models;
+using RedSailTechnologies.PaymentProcessingModule.Services.Interfaces;
 
-namespace RedSailTechnologies.PaymentProcessingModule.Api.Controllers.DailyTotals
+namespace RedSailTechnologies.PaymentProcessingModule.Services.Services
 {
-    public class DailyTotalsHandler: IDailyTotalsHandler
+    public class DailyTotalsService : IDailyTotalsService
     {
         ///<inheritdoc/>
         public Dictionary<string, Dictionary<DateTime, decimal>> CalculateDailyTotals(IEnumerable<Transaction> transactions)

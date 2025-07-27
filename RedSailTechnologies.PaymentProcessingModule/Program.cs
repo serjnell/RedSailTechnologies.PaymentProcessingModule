@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using RedSailTechnologies.PaymentProcessingModule.Api.Controllers.DailyTotals;
-using RedSailTechnologies.PaymentProcessingModule.Common.Interfaces.Handlers;
+using RedSailTechnologies.PaymentProcessingModule.Services.Interfaces;
+using RedSailTechnologies.PaymentProcessingModule.Services.Services;
 
 namespace RedSailTechnologies.PaymentProcessingModule.Api
 {
@@ -19,7 +19,7 @@ namespace RedSailTechnologies.PaymentProcessingModule.Api
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
-            builder.Services.AddTransient<IDailyTotalsHandler, DailyTotalsHandler>();
+            builder.Services.AddTransient<IDailyTotalsService, DailyTotalsService>();
 
             var app = builder.Build();
 

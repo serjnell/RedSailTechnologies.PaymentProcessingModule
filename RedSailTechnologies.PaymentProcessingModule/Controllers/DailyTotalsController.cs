@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
-using System;
-using RedSailTechnologies.PaymentProcessingModule.Common.Interfaces.Handlers;
 using RedSailTechnologies.PaymentProcessingModule.Common.Models;
+using RedSailTechnologies.PaymentProcessingModule.Services.Interfaces;
+using System;
+using System.Collections.Generic;
 
 namespace RedSailTechnologies.PaymentProcessingModule.Api.Controllers
 {
@@ -10,28 +10,28 @@ namespace RedSailTechnologies.PaymentProcessingModule.Api.Controllers
     [Route("daily_totals")]
     public class DailyTotalsController : ControllerBase
     {
-        private readonly IDailyTotalsHandler _handler;
+        private readonly IDailyTotalsService _service;
 
         /// <summary>
-        /// Initializes anew instance of <see cref="DailyTotalsController"/>.
+        /// Initializes a new instance of a <see cref="DailyTotalsController"/>.
         /// </summary>
-        /// <param name="handler">The handler.</param>
-        public DailyTotalsController(IDailyTotalsHandler handler)
+        /// <param name="service">The <see cref="IDailyTotalsService"/> service.</param>
+        public DailyTotalsController(IDailyTotalsService service)
         {
-            _handler = handler;
+            _service = service;
         }
 
         [HttpGet("calculate")]
         public Dictionary<string, Dictionary<DateTime, decimal>> CalculateDailyTotals([FromBody] IEnumerable<Transaction> transactions)
         {
-           return _handler.CalculateDailyTotals(transactions);
+           return _service.CalculateDailyTotals(transactions);
         }
 
-        [HttpPost("calculate")]
-        public Dictionary<string, Dictionary<DateTime, decimal>> CalculateDailyTotalsAsync([FromQuery] IEnumerable<Transaction> transactions)
-        {
-            return _handler.CalculateDailyTotals(transactions);
-        }
+        //[HttpGet("calculates")]
+        //public ActionResult<Dictionary<string, Dictionary<DateTime, decimal>>> CalculateDailyTotals2([FromBody] IEnumerable<Transaction> transactions)
+        //{
+        //    return _handler.CalculateDailyTotals(transactions);
+        //}
 
         [HttpGet("test")]
         public string Test()
