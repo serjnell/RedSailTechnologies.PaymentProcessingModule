@@ -1,0 +1,45 @@
+This api is deployed to Microsoft Azure.
+GET https://redsailtechnologiespaymentprocessingmoduleapi20250727021314.azurewebsites.net/daily_totals/calculate
+
+[
+		{
+			"Amount"    : "1",
+			"Currency"  : "USD",
+			"Timestamp" : "2025-07-25T12:12:12"
+		},
+		{
+			"Amount"    : "2",
+			"Currency"  : "USD",
+			"Timestamp" : "2025-07-25T11:11:11"
+		},
+		{
+			"Amount"    : "3",
+			"Currency"  : "USD",
+			"Timestamp" : "2025-07-26T10:10:10"
+		},
+		{
+			"Amount"    : "4",
+			"Currency"  : "USD",
+			"Timestamp" : "2025-07-26T09:00:00"
+		},
+		{
+			"Amount"    : "5",
+			"Currency"  : "EUR",
+			"Timestamp" : "2025-07-26T12:12:12"
+		},
+		{
+			"Amount"    : "6",
+			"Currency"  : "EUR",
+			"Timestamp" : "2025-07-26T11:11:11"
+		},
+		{
+			"Amount"    : "7",
+			"Currency"  : "EUR",
+			"Timestamp" : "2025-07-25T10:10:10"
+		},
+		{
+			"Amount"    : "8",
+			"Currency"  : "EUR",
+			"Timestamp" : "2025-07-25T09:00:00"
+		}
+]
