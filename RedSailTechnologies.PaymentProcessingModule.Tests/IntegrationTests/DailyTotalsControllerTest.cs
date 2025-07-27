@@ -1,4 +1,5 @@
 using FluentAssertions;
+using Microsoft.Extensions.Logging;
 using RedSailTechnologies.PaymentProcessingModule.Api.Controllers;
 using RedSailTechnologies.PaymentProcessingModule.Api.Controllers.Validators;
 using RedSailTechnologies.PaymentProcessingModule.Common.Models;
@@ -19,8 +20,14 @@ namespace RedSailTechnologies.PaymentProcessingModule.Tests.IntegrationTests
         [TestInitialize]
         public void Setup()
         {
+            using var loggerFactory = LoggerFactory.Create(loggingBuilder => loggingBuilder
+                                                   .SetMinimumLevel(LogLevel.Error)
+                                                   .AddConsole());
+
+            var logger = loggerFactory.CreateLogger<DailyTotalsController>();
             var dailyTotalsService = new DailyTotalsService();
-            _sut = new DailyTotalsController(dailyTotalsService);
+            
+            _sut = new DailyTotalsController(logger, dailyTotalsService);
         }
 
         [TestMethod]
@@ -62,6 +69,47 @@ namespace RedSailTechnologies.PaymentProcessingModule.Tests.IntegrationTests
 
             //Assert
             result.Should().BeEquivalentTo(expectedResult);
+        }
+
+        [TestMethod]
+        public async Task CalculateDailyTotalsAsync_Succes()
+        {
+            //Arrange
+            var transactions = new List<Transaction>()
+            {
+                new Transaction() {Amount = 15, Currency = UsdCurrency, Timestamp = TestDate},
+                new Transaction() {Amount = 15, Currency = UsdCurrency, Timestamp = TestDate},
+                new Transaction() {Amount = 20, Currency = UsdCurrency, Timestamp = TestDate.AddDays(-1)},
+                new Transaction() {Amount = 20, Currency = UsdCurrency, Timestamp = TestDate.AddDays(-1)},
+
+                new Transaction() {Amount = 15, Currency = EurCurrency, Timestamp = TestDate},
+                new Transaction() {Amount = 15, Currency = EurCurrency, Timestamp = TestDate},
+                new Transaction() {Amount = 20, Currency = EurCurrency, Timestamp = TestDate.AddDays(-1)},
+                new Transaction() {Amount = 20, Currency = EurCurrency, Timestamp = TestDate.AddDays(-1)},
+            };
+
+
+            var expectedResult = new Dictionary<string, Dictionary<DateTime, Decimal>>()
+            {
+                {"USD", new Dictionary<DateTime, decimal>()
+                    {
+                        {TestDate, 30},
+                        {TestDate.AddDays(-1), 40},
+                    }
+                },
+                {"EUR", new Dictionary<DateTime, decimal>()
+                {
+                    {TestDate, 30},
+                    {TestDate.AddDays(-1), 40},
+                }
+}
+            };
+
+            //Act
+            var result = await _sut.CalculateDailyTotalsAsync(transactions);
+
+            //Assert
+            result.Value.Should().BeEquivalentTo(expectedResult);
         }
 
         [TestMethod]

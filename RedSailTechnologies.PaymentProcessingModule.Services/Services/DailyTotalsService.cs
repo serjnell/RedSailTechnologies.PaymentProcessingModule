@@ -13,5 +13,11 @@ namespace RedSailTechnologies.PaymentProcessingModule.Services.Services
                                                                      .ToDictionary(k => k.Key, v => v.Sum(x => x.Amount)));
             return result;
         }
+
+        ///<inheritdoc/>
+        public Task<Dictionary<string, Dictionary<DateTime, decimal>>> CalculateDailyTotalsAsync(IEnumerable<Transaction> transactions)
+        {
+            return Task.Run(() => CalculateDailyTotals(transactions));
+        }
     }
 }

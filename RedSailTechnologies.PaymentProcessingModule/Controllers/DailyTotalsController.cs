@@ -4,6 +4,7 @@ using RedSailTechnologies.PaymentProcessingModule.Common.Models;
 using RedSailTechnologies.PaymentProcessingModule.Services.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace RedSailTechnologies.PaymentProcessingModule.Api.Controllers
 {
@@ -25,6 +26,11 @@ namespace RedSailTechnologies.PaymentProcessingModule.Api.Controllers
             _service = service;
         }
 
+        /// <summary>
+        /// Calculates daily totals.
+        /// </summary>
+        /// <param name="transactions">The transactions.</param>
+        /// <returns>A nested dictionary where Key 1: currency, Key 2: date (only the day part), Value: total amount for that day and currency.</returns>
         [HttpGet("calculate")]
         public Dictionary<string, Dictionary<DateTime, decimal>> CalculateDailyTotals([FromBody] IEnumerable<Transaction> transactions)
         {
@@ -39,12 +45,17 @@ namespace RedSailTechnologies.PaymentProcessingModule.Api.Controllers
             }
         }
 
-        [HttpGet("calculate_result")]
-        public ActionResult<Dictionary<string, Dictionary<DateTime, decimal>>> CalculateDailyTotalsResult([FromBody] IEnumerable<Transaction> transactions)
+        /// <summary>
+        /// Calculates daily totals asynchronously.
+        /// </summary>
+        /// <param name="transactions">The transactions.</param>
+        /// <returns>A nested dictionary where Key 1: currency, Key 2: date (only the day part), Value: total amount for that day and currency.</returns>
+        [HttpGet("calculate_async")]
+        public async Task<ActionResult<Dictionary<string, Dictionary<DateTime, decimal>>>> CalculateDailyTotalsAsync([FromBody] IEnumerable<Transaction> transactions)
         {
             try
             {
-                return _service.CalculateDailyTotals(transactions);
+                return await _service.CalculateDailyTotalsAsync(transactions);
             }
             catch (Exception e)
             {
