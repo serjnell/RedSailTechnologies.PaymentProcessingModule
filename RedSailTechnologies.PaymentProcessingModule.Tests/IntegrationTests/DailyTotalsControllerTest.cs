@@ -1,23 +1,26 @@
 using FluentAssertions;
+using RedSailTechnologies.PaymentProcessingModule.Api.Controllers;
+using RedSailTechnologies.PaymentProcessingModule.Api.Controllers.Validators;
 using RedSailTechnologies.PaymentProcessingModule.Common.Models;
 using RedSailTechnologies.PaymentProcessingModule.Services.Services;
 
 namespace RedSailTechnologies.PaymentProcessingModule.Tests.IntegrationTests
 {
     [TestClass]
-    public class DailyTotalsServiceTest
+    public class DailyTotalsControllerTest
     {
         private const string UsdCurrency = "USD";
         private const string EurCurrency = "EUR";
 
         private DateTime TestDate = new DateTime(2025, 7, 28);
 
-        private DailyTotalsService _sut;
+        private DailyTotalsController _sut;
 
         [TestInitialize]
         public void Setup()
         {
-            _sut = new DailyTotalsService();
+            var dailyTotalsService = new DailyTotalsService();
+            _sut = new DailyTotalsController(dailyTotalsService);
         }
 
         [TestMethod]
@@ -59,6 +62,26 @@ namespace RedSailTechnologies.PaymentProcessingModule.Tests.IntegrationTests
 
             //Assert
             result.Should().BeEquivalentTo(expectedResult);
+        }
+
+        [TestMethod]
+        public void CalculateDailyTotals_Fail()
+        {
+            //Arrange
+            var validator = new TransactionListValidator();
+            var transactions = new List<Transaction>()
+            {
+                new Transaction() {Amount = -15, Currency = "1", Timestamp = TestDate},
+                new Transaction() {Amount = -5, Currency = "X", Timestamp = TestDate},
+                new Transaction() {Amount = 20, Currency = "X", Timestamp = TestDate.AddDays(-1)},
+                new Transaction() {Amount = 20, Currency = "Y", Timestamp = TestDate.AddDays(-1)},
+            };
+
+            //Act
+            var result = validator.Validate(transactions);
+
+            //Assert
+            Assert.IsFalse(result.IsValid);
         }
     }
 }

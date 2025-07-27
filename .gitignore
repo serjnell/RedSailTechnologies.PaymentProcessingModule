@@ -133,3 +133,8 @@ RedSailTechnologies.PaymentProcessingModule.Tests/bin/Debug/net8.0/zh-Hant/Micro
 RedSailTechnologies.PaymentProcessingModule.Repositories/obj/Debug/net8.0/RedSailTechnologies.PaymentProcessingModule.Repositories.AssemblyInfoInputs.cache
 RedSailTechnologies.PaymentProcessingModule.Repositories/obj/Debug/net8.0/RedSailTechnologies.PaymentProcessingModule.Repositories.AssemblyInfoInputs.cache
 /RedSailTechnologies.PaymentProcessingModule.Common/obj
+/RedSailTechnologies.PaymentProcessingModule.Services/bin
+/RedSailTechnologies.PaymentProcessingModule.Tests/bin
+/RedSailTechnologies.PaymentProcessingModule.Common/obj
+/RedSailTechnologies.PaymentProcessingModule.Common/obj/Debug
+/RedSailTechnologies.PaymentProcessingModule.Tests/bin
