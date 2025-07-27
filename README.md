@@ -1,4 +1,6 @@
-This api is deployed to Microsoft Azure.
+This API is deployed as an App Service on Microsoft Azure.
+
+Below is the URL and the request object you can use to test it via Postman.
 GET https://redsailtechnologiespaymentprocessingmoduleapi20250727021314.azurewebsites.net/daily_totals/calculate
 
 [
