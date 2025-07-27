@@ -30,7 +30,6 @@ namespace RedSailTechnologies.PaymentProcessingModule.Api.Controllers
         {
             try
             {
-                throw new Exception();
                 return _service.CalculateDailyTotals(transactions);
             }
             catch (Exception e)
