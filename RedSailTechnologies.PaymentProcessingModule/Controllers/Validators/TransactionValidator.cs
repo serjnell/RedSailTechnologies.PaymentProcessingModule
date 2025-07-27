@@ -10,7 +10,10 @@ namespace RedSailTechnologies.PaymentProcessingModule.Api.Controllers.Validators
         public TransactionValidator()
         {
             RuleFor(x => x.Amount).GreaterThan(0)
-                .WithMessage("Amount can't be less then zero.");
+                .WithMessage("Amount can't be less than zero.");
+
+            RuleFor(x => x.Amount).LessThanOrEqualTo(decimal.MaxValue)
+                .WithMessage($"Amount can't be greater than {decimal.MaxValue}.");
 
             RuleFor(x => x.Currency).Must(x => Enum.IsDefined(typeof(Currencies), x))
                 .WithMessage("Currency is not supported by payment module.");
