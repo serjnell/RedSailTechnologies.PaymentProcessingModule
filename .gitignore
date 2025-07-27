@@ -138,3 +138,6 @@ RedSailTechnologies.PaymentProcessingModule.Repositories/obj/Debug/net8.0/RedSai
 /RedSailTechnologies.PaymentProcessingModule.Common/obj
 /RedSailTechnologies.PaymentProcessingModule.Common/obj/Debug
 /RedSailTechnologies.PaymentProcessingModule.Tests/bin
+/RedSailTechnologies.PaymentProcessingModule/Properties
+RedSailTechnologies.PaymentProcessingModule.Common/obj/Debug/net8.0/RedSailTechnologies.PaymentProcessingModule.Common.AssemblyInfoInputs.cache
+RedSailTechnologies.PaymentProcessingModule.Common/obj/Debug/net8.0/RedSailTechnologies.PaymentProcessingModule.Common.AssemblyInfo.cs
