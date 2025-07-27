@@ -13,7 +13,7 @@ namespace RedSailTechnologies.PaymentProcessingModule.Tests.IntegrationTests
         private const string UsdCurrency = "USD";
         private const string EurCurrency = "EUR";
 
-        private DateTime TestDate = new DateTime(2025, 7, 28);
+        private DateTime TestDate = new DateTime(2025, 7, 27);
 
         private DailyTotalsController _sut;
 
