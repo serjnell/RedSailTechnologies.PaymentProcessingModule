@@ -2,5 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ActiveDebugProfile>https</ActiveDebugProfile>
+    <NameOfLastUsedPublishProfile>C:\Repos\RedSailTechnologies.PaymentProcessingModule\.github\workflows\RedSailTechnologiesPaymentProcessingModuleApi20250727011935.yml</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
