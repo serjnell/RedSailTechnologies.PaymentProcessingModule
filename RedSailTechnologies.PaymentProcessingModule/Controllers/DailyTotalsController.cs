@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace RedSailTechnologies.PaymentProcessingModule.Api.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("daily_totals")]
     public class DailyTotalsController : ControllerBase
@@ -52,6 +51,7 @@ namespace RedSailTechnologies.PaymentProcessingModule.Api.Controllers
         /// </summary>
         /// <param name="transactions">The transactions.</param>
         /// <returns>A nested dictionary where Key 1: currency, Key 2: date (only the day part), Value: total amount for that day and currency.</returns>
+        [Authorize]
         [HttpGet("calculate_async")]
         public async Task<ActionResult<Dictionary<string, Dictionary<DateTime, decimal>>>> CalculateDailyTotalsAsync([FromBody] IEnumerable<Transaction> transactions)
         {
