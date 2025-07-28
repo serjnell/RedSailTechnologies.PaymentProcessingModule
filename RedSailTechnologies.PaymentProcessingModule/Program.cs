@@ -8,6 +8,7 @@ using Microsoft.Identity.Web;
 using RedSailTechnologies.PaymentProcessingModule.Api.Controllers.Validators;
 using RedSailTechnologies.PaymentProcessingModule.Services.Interfaces;
 using RedSailTechnologies.PaymentProcessingModule.Services.Services;
+using System.Threading.Tasks;
 
 namespace RedSailTechnologies.PaymentProcessingModule.Api
 {
@@ -17,29 +18,37 @@ namespace RedSailTechnologies.PaymentProcessingModule.Api
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
 
             builder.Services.AddFluentValidationAutoValidation();
             builder.Services.AddValidatorsFromAssemblyContaining<TransactionValidator>();
             builder.Services.AddControllers();
 
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
             builder.Services.AddTransient<IDailyTotalsService, DailyTotalsService>();
 
-            var ololo = builder.Configuration.GetSection("AzureAd");
-
             builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                             .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
 
+            builder.Services.Configure<JwtBearerOptions>(JwtBearerDefaults.AuthenticationScheme, options =>
+            {
+                options.Events = new JwtBearerEvents
+                {
+                    OnTokenValidated = context =>
+                    {
+                        return Task.CompletedTask;
+                    },
+                    OnAuthenticationFailed = context =>
+                    {
+                        return Task.CompletedTask;
+                    }
+                };
+            });
+
             builder.Services.AddAuthorization();
-
-
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
