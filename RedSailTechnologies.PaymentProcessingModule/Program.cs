@@ -1,8 +1,10 @@
 using FluentValidation;
 using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Identity.Web;
 using RedSailTechnologies.PaymentProcessingModule.Api.Controllers.Validators;
 using RedSailTechnologies.PaymentProcessingModule.Services.Interfaces;
 using RedSailTechnologies.PaymentProcessingModule.Services.Services;
@@ -27,6 +29,14 @@ namespace RedSailTechnologies.PaymentProcessingModule.Api
 
             builder.Services.AddTransient<IDailyTotalsService, DailyTotalsService>();
 
+            var ololo = builder.Configuration.GetSection("AzureAd");
+
+            builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                            .AddMicrosoftIdentityWebApi(builder.Configuration.GetSection("AzureAd"));
+
+            builder.Services.AddAuthorization();
+
+
             var app = builder.Build();
 
             // Configure the HTTP request pipeline.
@@ -38,6 +48,7 @@ namespace RedSailTechnologies.PaymentProcessingModule.Api
 
             app.UseHttpsRedirection();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.MapControllers();

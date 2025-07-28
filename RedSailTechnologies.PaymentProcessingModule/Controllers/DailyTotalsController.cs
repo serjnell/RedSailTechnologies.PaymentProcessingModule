@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using RedSailTechnologies.PaymentProcessingModule.Common.Models;
 using RedSailTechnologies.PaymentProcessingModule.Services.Interfaces;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 
 namespace RedSailTechnologies.PaymentProcessingModule.Api.Controllers
 {
+    [Authorize]
     [ApiController]
     [Route("daily_totals")]
     public class DailyTotalsController : ControllerBase
